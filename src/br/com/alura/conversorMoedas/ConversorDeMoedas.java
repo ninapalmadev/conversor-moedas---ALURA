@@ -4,25 +4,22 @@ import javax.swing.JOptionPane;
 
 public class ConversorDeMoedas {
 	public static void main(String[] args) {
-		
-		FuncaoConverter converter = new FuncaoConverter();
 
 		while (true) {
-			String options = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE,
-					null, new Object[] { "Conversor de Moeda", "Conversor de Temperatura" }, "Escolha").toString();
+			String options = JOptionPane.showInputDialog(null, "Escolha a opção que deseja converter ", "Moedas",
+					JOptionPane.PLAIN_MESSAGE, null,
+					new Object[] { "De Reais para Dólares", "De Reais para Euros", "De Reais para Libras",
+							"De Reais para Peso Argentino", "De Reais pra Peso Chileno", "De Dólares para Reais",
+							"De Euros para Reais", "De Libras pra Reais", "De Peso Argentino pra Reais",
+							"De Peso Chileno pra Reais" },
+					"Escolha").toString();
 			switch (options) {
-			
-			case "Conversor de Moeda": {
-				String input = JOptionPane.showInputDialog("Insira um valor em Reais(R$)");
-				double valorRecebido = Double.parseDouble(input);
+			case "De Reais para Dólares":
 				converter.ConverterReaisParaDolar(valorRecebido);
+				break;
 			}
-			
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + options);
-			}
+
 		}
 
 	}
-
 }
